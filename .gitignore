@@ -1,4 +1,25 @@
-/target/
-.settings/
-.project
+target
+.history
+.factorypath
+.attach*
+.flattened-pom.xml
+scratchpad
+
+### STS/Eclipse ###
+.apt_generated
 .classpath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode
+
+.m2/repository
