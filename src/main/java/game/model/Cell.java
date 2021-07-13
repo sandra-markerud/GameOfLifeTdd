@@ -3,6 +3,8 @@ package game.model;
 import static game.model.State.ALIVE;
 import static game.model.State.DEAD;
 
+import java.util.Objects;
+
 public class Cell {
 
   private final int positionX;
@@ -35,4 +37,29 @@ public class Cell {
     return state == DEAD;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Cell cell = (Cell) o;
+    return positionX == cell.positionX && positionY == cell.positionY && state == cell.state;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(positionX, positionY, state);
+  }
+
+  @Override
+  public String toString() {
+    return "Cell{" +
+        "positionX=" + positionX +
+        ", positionY=" + positionY +
+        ", state=" + state +
+        '}';
+  }
 }

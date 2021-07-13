@@ -6,6 +6,7 @@ import static game.model.State.ALIVE;
 import static game.model.State.DEAD;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import game.model.pattern.Glider;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,6 +60,16 @@ class GridCellModelTest {
     List<Cell> points = model.flatten();
 
     assertThat(points).size().isEqualTo(ROWS * COLUMNS);
+  }
+
+  @Test
+  void initModelWithGlider_GliderExistsAtDefaultPosition() {
+    Glider glider = new Glider();
+    GridCellModel model = new GridCellModel(ROWS, COLUMNS, glider);
+
+    List<Cell> initializedCells = model.flatten();
+
+    assertThat(initializedCells).containsAll(glider.pattern());
   }
 
 }

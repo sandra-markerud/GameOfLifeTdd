@@ -2,6 +2,7 @@ package game.model;
 
 import static game.model.State.DEAD;
 
+import game.model.pattern.Glider;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,16 +12,21 @@ public class GridCellModel {
   private final Cell[][] cells;
 
   public GridCellModel(int rows, int columns) {
-    this.cells = new Cell[rows][columns];
-    initCells();
+    this(rows, columns, new Glider());
   }
 
-  private void initCells() {
+  public GridCellModel(int rows, int columns, Glider glider) {
+    this.cells = new Cell[rows][columns];
+    initCells(glider);
+  }
+
+  private void initCells(Glider glider) {
     for (int row = 0; row < this.cells.length; ++row) {
       for (int column = 0; column < this.cells[0].length; ++column) {
         cells[row][column] = new Cell(row, column, DEAD);
       }
     }
+    glider.pattern().forEach(cell -> cells[cell.getPositionX()][cell.getPositionY()] = cell);
   }
 
   public Cell getCellAtPosition(int row, int column) {

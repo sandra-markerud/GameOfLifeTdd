@@ -3,7 +3,6 @@ package game.view;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JPanel;
 
 public class Grid extends JPanel {
