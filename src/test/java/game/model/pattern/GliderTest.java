@@ -52,6 +52,6 @@ public class GliderTest {
         List<Cell> cells = glider.pattern();
 
         assertThat(cells).extracting(Cell::getState)
-                .containsExactly(DEAD, ALIVE, DEAD, DEAD, DEAD, ALIVE, ALIVE, ALIVE, ALIVE);
+                .containsExactly(DEAD, DEAD, ALIVE, ALIVE, DEAD, ALIVE, DEAD, ALIVE, ALIVE);
     }
 }

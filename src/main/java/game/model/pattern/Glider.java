@@ -22,12 +22,12 @@ public class Glider {
     public List<Cell> pattern() {
         return List.of(
                 new Cell(startX, startY, DEAD),
-                new Cell(startX, startY + 1, ALIVE),
-                new Cell(startX, startY + 2, DEAD),
-                new Cell(startX + 1, startY, DEAD),
+                new Cell(startX, startY + 1, DEAD),
+                new Cell(startX, startY + 2, ALIVE),
+                new Cell(startX + 1, startY, ALIVE),
                 new Cell(startX + 1, startY + 1, DEAD),
                 new Cell(startX + 1, startY + 2, ALIVE),
-                new Cell(startX + 2, startY, ALIVE),
+                new Cell(startX + 2, startY, DEAD),
                 new Cell(startX + 2, startY + 1, ALIVE),
                 new Cell(startX + 2, startY + 2, ALIVE));
     }
