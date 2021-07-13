@@ -1,6 +1,9 @@
 package game.run;
 
-import game.run.GameProperties;
+import static game.model.ModelProperties.COLUMNS;
+import static game.model.ModelProperties.ROWS;
+
+import game.model.GridCellModel;
 import game.view.Display;
 import game.view.GameOfLifeDisplay;
 import game.view.Gridpoints;
@@ -15,7 +18,7 @@ public class GameEngine {
 
 	public void run() {
 		while (true) {
-			display.update(new Gridpoints());
+			display.update(new Gridpoints(new GridCellModel(ROWS, COLUMNS)));
 			waitForNextTurn(GameProperties.TIME_BETWEEN_TURNS);
 		}
 	}
